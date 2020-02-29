@@ -30,7 +30,7 @@ module.exports = function(app) {
     });
 
     app.post("/api/clear", function(req, res) {
-        // Empty out the arrays of data
+        
         appData.length = 0;
         noteData.length = 0;
 
