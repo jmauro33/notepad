@@ -7,12 +7,12 @@ module.exports = function(app) {
 
 
     app.get("/api/apps", function(req, res) {
-    res.json();
+    res.json(appData);
 
     });
 
     app.get("/api/notes", function(req, res) {
-        res.json();
+        res.json(noteData);
         
         });
         
