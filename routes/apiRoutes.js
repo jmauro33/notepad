@@ -1,23 +1,23 @@
-var appData = require("../data/appData");
-var noteData = require("../data/noteData");
+var appData = require("../json/db.json");
+var noteData = require("../json/journal.json");
 
 
 
 module.exports = function(app) {
 
 
-    app.get("/api/apps", function(req, res) {
-    res.json(appData);
+    app.get("/api/notes", function(req, res) {
+    res.json();
 
     });
 
     app.get("/api/notes", function(req, res) {
-        res.json(noteData);
+        res.json();
         
         });
         
         
-    app.post("/api/appData", function(req, res) {
+    app.post("/api/notes", function(req, res) {
 
     if (appData.length < 5) {
         appData.push(req.body);
@@ -29,7 +29,7 @@ module.exports = function(app) {
      }
     });
 
-    app.post("/api/clear", function(req, res) {
+    app.delete("/api/notes/:id", function(req, res) {
         
         appData.length = 0;
         noteData.length = 0;
