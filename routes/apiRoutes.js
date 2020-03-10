@@ -1,5 +1,5 @@
-var appData = require("../json/db.json");
-var noteData = require("../json/journal.json");
+var appData = require("../assets/json/db.json");
+var noteData = require("../assets/json/journal.json");
 
 
 
@@ -7,15 +7,10 @@ module.exports = function(app) {
 
 
     app.get("/api/notes", function(req, res) {
-    res.json();
+    res.json(appData);
 
     });
 
-    app.get("/api/notes", function(req, res) {
-        res.json();
-        
-        });
-        
         
     app.post("/api/notes", function(req, res) {
 
